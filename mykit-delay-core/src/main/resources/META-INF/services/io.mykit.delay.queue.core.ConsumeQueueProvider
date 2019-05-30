@@ -1,0 +1,2 @@
+io.mykit.delay.queue.cqp.JmsConsumeQueue
+io.mykit.delay.queue.cqp.ConsoleConsumeQueue

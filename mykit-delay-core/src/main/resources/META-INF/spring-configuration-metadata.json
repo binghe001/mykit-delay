@@ -1,0 +1,54 @@
+{
+  "groups": [
+    {
+      "sourceType": "io.mykit.delay.common.autoconfigigure.RegistryProperties",
+      "name": "mykit-delay.registry",
+      "type": "io.mykit.delay.common.autoconfigigure.RegistryProperties",
+      "description": "mykit-delay.registry 配置项"
+    },
+    {
+      "sourceType": "io.mykit.delay.queue.redis.support.RedisQueueProperties",
+      "name": "mykit.delay.rqueue",
+      "type": "io.mykit.delay.queue.redis.support.RedisQueueProperties",
+      "description": "mykit.delay.rqueue 配置项"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "io.mykit.delay.common.autoconfigigure.RegistryProperties",
+      "name": "mykit.delay.registry.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用注册中心模式"
+    },
+    {
+      "sourceType": "io.mykit.delay.common.autoconfigigure.RegistryProperties",
+      "name": "mykit.delay.registry.namespace",
+      "type": "java.lang.String",
+      "description": "namespace"
+    },
+    {
+      "sourceType": "io.mykit.delay.common.autoconfigigure.RegistryProperties",
+      "name": "mykit.delay.registry.serverList",
+      "type": "java.lang.String",
+      "description": "zk serever list"
+    },
+    {
+      "sourceType": "io.mykit.delay.queue.redis.support.RedisQueueProperties",
+      "name": "mykit.delay.rqueue.cluster",
+      "type": "java.lang.Boolean",
+      "description": "是否启用集群模式"
+    },
+    {
+      "sourceType": "io.mykit.delay.queue.redis.support.RedisQueueProperties",
+      "name": "mykit.delay.rqueue.name",
+      "type": "java.lang.String",
+      "description": "队列名称"
+    },
+    {
+      "sourceType": "io.mykit.delay.queue.redis.support.RedisQueueProperties",
+      "name": "mykit.delay.rqueue.bucketSize",
+      "type": "java.lang.Integer",
+      "description": "分区bucket大小"
+    }
+  ]
+}
