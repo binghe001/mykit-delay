@@ -177,7 +177,7 @@ private int status= Status.WaitPut.ordinal();
 
 ##### 消息体中消息与`rocketmq`消息字段对应关系
 
-mykit-delay        | rocketMQ | 备注|
+mykit-delay        | RocketMQ | 备注|
 ---               | ---      |---          
 topic    | topic    |     |         
 subtopic | subtopic |      |    
