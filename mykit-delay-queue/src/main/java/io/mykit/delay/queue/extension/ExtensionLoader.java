@@ -16,6 +16,8 @@
 package io.mykit.delay.queue.extension;
 
 import io.mykit.delay.queue.core.ConsumeQueueProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
@@ -31,6 +33,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * @description 扩展类加载器
  */
 public final class ExtensionLoader {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExtensionLoader.class);
+
     private static volatile Map<Class<?>, Object> extensionMap = new ConcurrentHashMap<>();
 
     private static volatile Map<Class<?>, List<?>> extensionListMap = new ConcurrentHashMap<>();
@@ -65,6 +70,7 @@ public final class ExtensionLoader {
         if (StringUtils.isEmpty(defaultImp)) {
             throw new RuntimeException(String.format("请配置 %s SPI默认实现", clazz.getName()));
         }
+        LOGGER.debug("默认的SPI为===>>>" + defaultImp);
         ServiceLoader<T> serviceLoader = ServiceLoader.load(clazz);
         for (T service : serviceLoader) {
             if (service.getClass().isAnnotationPresent(ExtNamed.class)

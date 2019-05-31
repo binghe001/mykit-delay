@@ -15,7 +15,7 @@
  */
 package io.mykit.delay;
 
-import io.mykit.delay.common.utils.StartGetReady;
+import io.mykit.delay.starter.ready.StartGetReady;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
