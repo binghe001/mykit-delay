@@ -43,7 +43,7 @@ public class FixTest {
 
     @Test
     public void pushTest() {
-        long time = 1000 * (60 * new Random().nextInt(100) + 1);
+        long time = 1000 * (60 * new Random().nextInt(2) + 1);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis() + time);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -55,6 +55,7 @@ public class FixTest {
         job.setDelay(time);
         job.setId(JobIdGenerator.getStringId());
         redisQueue.push(job);
+        System.out.println("执行完成...");
 
 //         try {
 //             Thread.sleep(1000L);
@@ -62,4 +63,5 @@ public class FixTest {
 //             e.printStackTrace();
 //         }
     }
+
 }
