@@ -25,6 +25,7 @@ import io.mykit.delay.queue.JobMsg;
  */
 public class JobWrapp extends JobMsg {
 
+    private static final long serialVersionUID = -4623468942451592116L;
     private String buckedName;
 
     public String getBuckedName() {
