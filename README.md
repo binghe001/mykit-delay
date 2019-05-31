@@ -199,7 +199,7 @@ body    | 消息内容   |   消息内容   |
  
  运行mykit-delay-test模块下的测试类`io.mykit.delay.test.FixTest`添加任务到队列中 
  
- 启动mykit-delay-core模块下的`io.mykit.delay.MykitDelayCoreApplication`消费前面添加数据 为了方便查询效果 默认的消费方式是`consoleCQ` 控制台输出
+ 启动mykit-delay-test模块下的`io.mykit.delay.TestDelayQueue`消费前面添加数据 为了方便查询效果 默认的消费方式是`consoleCQ` 控制台输出
 
 
 # 扩展
