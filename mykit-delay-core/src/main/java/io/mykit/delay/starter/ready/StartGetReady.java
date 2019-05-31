@@ -41,6 +41,7 @@ public class StartGetReady {
         if (System.getProperty(Constants.SOFT_LOG_HOME_KEY) == null) {
             System.setProperty(Constants.SOFT_LOG_HOME_KEY, "".concat(LOG_PATH));
         }
+        //配置消费队列
         String defaultCQKey = ConsumeQueueProvider.class.getName();
         if(System.getProperty(defaultCQKey) == null){
             System.setProperty(defaultCQKey, DEFAULT_CQ);
