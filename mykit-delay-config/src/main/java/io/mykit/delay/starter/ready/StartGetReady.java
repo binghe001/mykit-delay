@@ -16,7 +16,6 @@
 package io.mykit.delay.starter.ready;
 
 import io.mykit.delay.common.utils.Constants;
-import io.mykit.delay.queue.core.ConsumeQueueProvider;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
@@ -34,7 +33,7 @@ public class StartGetReady {
     private static final String CLASS_PATH = MykitDelayFileLoad.getStringValue(MykitDelayFileLoad.CLASS_PATH);
     private static final String DEFAULT_CQ = MykitDelayFileLoad.getStringValue(MykitDelayFileLoad.DEFAULT_CQ);
 
-    public static void ready() {
+    public static void ready(String defaultCQKey){
         if (System.getProperty(Constants.SOFT_HOME_KEY) == null) {
             System.setProperty(Constants.SOFT_HOME_KEY, getClazzPathUrl());
         }
@@ -42,9 +41,17 @@ public class StartGetReady {
             System.setProperty(Constants.SOFT_LOG_HOME_KEY, "".concat(LOG_PATH));
         }
         //配置消费队列
-        String defaultCQKey = ConsumeQueueProvider.class.getName();
         if(System.getProperty(defaultCQKey) == null){
             System.setProperty(defaultCQKey, DEFAULT_CQ);
+        }
+    }
+
+    public static void ready() {
+        if (System.getProperty(Constants.SOFT_HOME_KEY) == null) {
+            System.setProperty(Constants.SOFT_HOME_KEY, getClazzPathUrl());
+        }
+        if (System.getProperty(Constants.SOFT_LOG_HOME_KEY) == null) {
+            System.setProperty(Constants.SOFT_LOG_HOME_KEY, "".concat(LOG_PATH));
         }
     }
 

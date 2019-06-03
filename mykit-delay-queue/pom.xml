@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>io.mykit.delay</groupId>
-            <artifactId>mykit-delay-common</artifactId>
+            <artifactId>mykit-delay-config</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

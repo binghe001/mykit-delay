@@ -55,6 +55,7 @@ public class FixTest {
         job.setDelay(time);
         job.setId(JobIdGenerator.getStringId());
         redisQueue.push(job);
+        System.out.println(job.getBody());
         System.out.println("执行完成...");
 
 //         try {

@@ -15,6 +15,7 @@
  */
 package io.mykit.delay;
 
+import io.mykit.delay.queue.core.ConsumeQueueProvider;
 import io.mykit.delay.starter.ready.StartGetReady;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,7 +30,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MykitDelayCoreApplication {
 
     public static void main(String[] args){
-        StartGetReady.ready();
+        StartGetReady.ready(ConsumeQueueProvider.class.getName());
         SpringApplication.run(MykitDelayCoreApplication.class, args);
 
     }
