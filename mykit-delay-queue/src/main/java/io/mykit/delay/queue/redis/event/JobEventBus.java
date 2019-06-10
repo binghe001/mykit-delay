@@ -48,13 +48,13 @@ public class JobEventBus {
     }
 
     public void unregister(JobEventListener listener) {
-        if (register.get() == true) {
+        if (register.get()) {
             bus.unregister(listener);
         }
     }
 
     public void post(JobEvent event) {
-        if (register.get() == true) {
+        if (register.get()) {
             bus.post(event);
         }
 
