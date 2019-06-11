@@ -43,7 +43,7 @@ import org.springframework.core.annotation.Order;
  */
 @Configuration
 @EnableConfigurationProperties(RegistryProperties.class)
-@ConditionalOnProperty(prefix = RegistryProperties.SDMQ_REGISTRY_PREFIX, value = "enable", havingValue = "true")
+@ConditionalOnProperty(prefix = RegistryProperties.MYKIT_DELAY_REGISTRY_PREFIX, value = "enable", havingValue = "true")
 @ConditionalOnClass(value = {ZooKeeperServer.class, CuratorFrameworkFactory.class})
 @Order(Ordered.LOWEST_PRECEDENCE + 50)
 public class LeaderAutoConfiguration {

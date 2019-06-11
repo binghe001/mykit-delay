@@ -24,9 +24,9 @@ import java.util.Objects;
  * @date 2019/5/29
  * @description 注册属性信息
  */
-@ConfigurationProperties(prefix = RegistryProperties.SDMQ_REGISTRY_PREFIX)
+@ConfigurationProperties(prefix = RegistryProperties.MYKIT_DELAY_REGISTRY_PREFIX)
 public class RegistryProperties {
-    public static final String SDMQ_REGISTRY_PREFIX = "mykit-delay.registry";
+    public static final String MYKIT_DELAY_REGISTRY_PREFIX = "mykit.delay.registry";
 
 
     private String enable = Objects.toString(Boolean.FALSE);
