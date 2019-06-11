@@ -27,8 +27,8 @@ import io.mykit.delay.queue.extension.ExtNamed;
  * @date 2019/5/29
  * @description Jms消费队列实现
  */
-@ExtNamed("jmsCQ")
-public class JmsConsumeQueue implements ConsumeQueueProvider {
+@ExtNamed("rocketmqCQ")
+public class RocketMQConsumeQueue implements ConsumeQueueProvider {
 
     @Override
     public void init() {

@@ -1,2 +1,2 @@
-io.mykit.delay.queue.cqp.JmsConsumeQueue
+io.mykit.delay.queue.cqp.RocketMQConsumeQueue
 io.mykit.delay.queue.cqp.ConsoleConsumeQueue
