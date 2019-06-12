@@ -23,9 +23,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2019/5/29
  * @description RocketMQ属性信息
  */
-@ConfigurationProperties(prefix = RocketMQProperties.MYKIT_DELAY_MQ_PREFIX)
+@ConfigurationProperties(prefix = RocketMQProperties.MYKIT_DELAY_ROCKETMQ_PREFIX)
 public class RocketMQProperties {
-    public static final String MYKIT_DELAY_MQ_PREFIX = "mykit.delay.rocketmq";
+    public static final String MYKIT_DELAY_ROCKETMQ_PREFIX = "mykit.delay.rocketmq";
     private             String namesrvAddr;
     private             String filterSourceRoot = "/home/";
 

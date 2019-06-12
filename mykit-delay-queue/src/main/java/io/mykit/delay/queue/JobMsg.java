@@ -16,6 +16,8 @@
 package io.mykit.delay.queue;
 
 import java.io.Serializable;
+
+import com.alibaba.fastjson.JSONObject;
 import io.mykit.delay.common.utils.Status;
 import io.mykit.delay.queue.core.Job;
 
@@ -113,4 +115,10 @@ public class JobMsg implements Serializable, Job {
     public void setSubtopic(String subtopic) {
         this.subtopic = subtopic;
     }
+
+    @Override
+    public String toJsonString() {
+        return JSONObject.toJSONString(this);
+    }
+
 }

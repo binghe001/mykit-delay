@@ -9,6 +9,19 @@ mykit:
     rocketmq:
       namesrvAddr: 127.0.0.1:9876
       filterSourceRoot: /home/
+    activemq:
+      # 连接的ActiveMQ failover:(tcp://localhost:61616,tcp://localhost:61617)
+      brokerUrl: failover:(tcp://10.2.2.231:61616)
+      username:
+      password:
+      useExponentialBackOff: true
+      useAsyncSend: true
+      maximumRedeliveries: 1
+      initialRedeliveryDelay: 3000
+      backOffMultiplier: 2
+      maximumRedeliveryDelay: 3000
+      queue_pub_sub_domain: false
+      topic_pub_sub_domain: true
     rqueue:
      #是否已集群模式运行 会涉及到分布式锁竞争的情况 默认为false
       cluster: false

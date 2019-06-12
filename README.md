@@ -173,15 +173,15 @@ private int status= Status.WaitPut.ordinal();
    
 #### 客户端获取队列方式
 
-目前默认实现了`rocketmq`的推送方式。暂时就不用自己去实现推拉数据了。直接强依赖MQ。
+目前默认实现了`RocketMQ`与`ActiveMQ`的推送方式。暂时就不用自己去实现推拉数据了。直接强依赖MQ。
 
-##### 消息体中消息与`rocketmq`消息字段对应关系
+##### 消息体中消息与`RocketMQ`和 `ActiveMQ` 消息字段对应关系
 
-mykit-delay        | RocketMQ | 备注|
----               | ---      |---          
-topic    | topic    |     |         
-subtopic | subtopic |      |    
-body    | 消息内容   |   消息内容   |    
+mykit-delay   | RocketMQ | ActiveMQ|                备注            |
+---           | ---      | ---     | ---          
+topic         | topic    | topic   | 点对点发送队列名称或者主题名称    |         
+subtopic      | subtopic | subtopic| 点对点发送队列子名称或者主题子名称 |    
+body          | 消息内容  | 消息内容 |    消息内容                     |
          
 
 

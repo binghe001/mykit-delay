@@ -15,6 +15,7 @@
  */
 package io.mykit.delay.queue.redis;
 
+import com.alibaba.fastjson.JSONObject;
 import io.mykit.delay.queue.JobMsg;
 
 /**
@@ -34,5 +35,10 @@ public class JobWrapp extends JobMsg {
 
     public void setBuckedName(String buckedName) {
         this.buckedName = buckedName;
+    }
+
+    @Override
+    public String toJsonString() {
+        return JSONObject.toJSONString(this);
     }
 }

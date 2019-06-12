@@ -13,35 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.queue.cqp;
-
-import io.mykit.delay.common.autoconfigigure.MessageProducer;
-import io.mykit.delay.common.exception.ConsumeQueueException;
-import io.mykit.delay.queue.core.ConsumeQueueProvider;
-import io.mykit.delay.queue.core.Job;
-import io.mykit.delay.queue.extension.ExtNamed;
+package io.mykit.delay.queue.activemq;
 
 /**
  * @author liuyazhuang
  * @version 1.0.0
- * @date 2019/5/29
- * @description RocketMQ消费队列实现
+ * @date 2019/6/12
+ * @description ActiveMQ消息发送接口
  */
-@ExtNamed("rocketmqCQ")
-public class RocketMQConsumeQueue implements ConsumeQueueProvider {
+public interface ActiveMQSender {
+    /**
+     * 发送消息
+     * @param name 队列或者主题的名称
+     * @param message 发送的消息
+     */
+    void send(String name, final String message);
 
-    @Override
-    public void init() {
-
-    }
-
-    @Override
-    public void consumer(Job job) throws ConsumeQueueException {
-        MessageProducer.send(job);
-    }
-
-    @Override
-    public void destory() {
-
-    }
+    /**
+     * 延时发送消息
+     * @param name 队列或者主题的名称
+     * @param message 发送的消息
+     * @param scheduledDelayTime 延时时间
+     */
+    void send(String name, final String message,final long scheduledDelayTime);
 }

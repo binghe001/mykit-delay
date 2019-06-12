@@ -15,21 +15,24 @@
  */
 package io.mykit.delay.queue.cqp;
 
-import io.mykit.delay.common.autoconfigigure.MessageProducer;
 import io.mykit.delay.common.exception.ConsumeQueueException;
+import io.mykit.delay.queue.activemq.ActiveMQSender;
+import io.mykit.delay.queue.activemq.ActiveMQSenderFactory;
 import io.mykit.delay.queue.core.ConsumeQueueProvider;
 import io.mykit.delay.queue.core.Job;
 import io.mykit.delay.queue.extension.ExtNamed;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author liuyazhuang
  * @version 1.0.0
- * @date 2019/5/29
- * @description RocketMQ消费队列实现
+ * @date 2019/6/12
+ * @description ActiveMQ 消费队列
  */
-@ExtNamed("rocketmqCQ")
-public class RocketMQConsumeQueue implements ConsumeQueueProvider {
-
+@ExtNamed("activemqCQ")
+public class ActiveMQConsumeQueue implements ConsumeQueueProvider {
+    private final Logger logger = LoggerFactory.getLogger(ActiveMQConsumeQueue.class);
     @Override
     public void init() {
 
@@ -37,7 +40,12 @@ public class RocketMQConsumeQueue implements ConsumeQueueProvider {
 
     @Override
     public void consumer(Job job) throws ConsumeQueueException {
-        MessageProducer.send(job);
+        ActiveMQSender activeMQSender =  ActiveMQSenderFactory.getActiveMQSender(ActiveMQSenderFactory.JMS_QUEUE_SENDER);
+        if (activeMQSender != null){
+            activeMQSender.send(job.getTopic(), job.toJsonString());
+        }else{
+            logger.info("未获取到队列发送句柄....");
+        }
     }
 
     @Override
