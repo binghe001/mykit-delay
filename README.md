@@ -183,7 +183,8 @@ topic         | topic    | topic   | 点对点发送队列名称或者主题名�
 subtopic      | subtopic | subtopic| 点对点发送队列子名称或者主题子名称 |    
 body          | 消息内容  | 消息内容 |    消息内容                     |
          
-
+### 关于系统配置
+延迟框架与具体执行业务系统的交互方式通过延迟框架配置实现，具体配置文件位置为mykit-delay-config项目下的`resources/properties/starter.properties`文件中。
 
 ## 后期优化
 
@@ -206,4 +207,4 @@ body          | 消息内容  | 消息内容 |    消息内容                  
 
 支持zset队列个数可配置 避免大数据带来高延迟的问题。
 
-目前存在日志和redis元数据有可能不一致的问题 如mysql挂了,写日志不会成功。
+目前存在日志和redis元数据有可能不一致的问题 如mysql挂了,写日志不会成功，后续会通过Redis直接同步binlog的方式来解决此问题。
