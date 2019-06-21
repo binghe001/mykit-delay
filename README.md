@@ -18,8 +18,8 @@ mykit-delay 冰河个人自主研发的简单、稳定、可扩展的延迟消�
 
 # 需求背景
 
-* 用户下订单成功之后隔20分钟给用户发送上门服务通知短信
-* 订单完成一个小时之后通知用户对上门服务进行评价
+* 用户下订单后未支付，30分钟后支付超时
+* 在某个时间点通知用户参加系统活动
 * 业务执行失败之后隔10分钟重试一次
 
 类似的场景比较多 简单的处理方式就是使用定时任务 假如数据比较多的时候 有的数据可能延迟比较严重,而且越来越多的定时业务导致任务调度很繁琐不好管理。
@@ -129,7 +129,7 @@ private int status= Status.WaitPut.ordinal();
 /push  
   POST application/json
 
-{"body":"{ffff}","delay":10000,"id":"20","status":0,"topic":"ces","subtopic":"",ttl":12}
+{"body":"{hello world}","delay":10000,"id":"20","status":0,"topic":"ces","subtopic":"",ttl":12}
 ````
 
 #### 删除任务
@@ -173,7 +173,7 @@ private int status= Status.WaitPut.ordinal();
    
 #### 客户端获取队列方式
 
-目前默认实现了`RocketMQ`与`ActiveMQ`的推送方式。暂时就不用自己去实现推拉数据了。直接强依赖MQ。
+目前默认实现了`RocketMQ`与`ActiveMQ`的推送方式。依赖MQ的方式来实现延时框架与具体业务系统的耦合。
 
 ##### 消息体中消息与`RocketMQ`和 `ActiveMQ` 消息字段对应关系
 
@@ -190,14 +190,14 @@ body          | 消息内容  | 消息内容 |    消息内容                  
 * 分区(buck)支持动态设置
 * redis与数据库数据一致性的问题 （`重要`）
 * 实现自己的推拉机制
-* 支持可切换实现方式 当前强依赖redis 只有这么1个实现
+* 支持可切换实现方式 目前只是依赖Redis实现，后续待优化
 * 支持Web控制台管理队列
 * 实现消息消费`TTL`机制 
 
 ## 测试
  需要配置好数据库地址和Redis的地址 如果不是单机模式 也需要配置好Zookeeper
  
- 运行mykit-delay-test模块下的测试类`io.mykit.delay.test.FixTest`添加任务到队列中 
+ 运行mykit-delay-test模块下的测试类`io.mykit.delay.test.PushTest`添加任务到队列中 
  
  启动mykit-delay-test模块下的`io.mykit.delay.TestDelayQueue`消费前面添加数据 为了方便查询效果 默认的消费方式是`consoleCQ` 控制台输出
 

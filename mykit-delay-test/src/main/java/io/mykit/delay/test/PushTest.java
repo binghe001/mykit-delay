@@ -37,7 +37,7 @@ import java.util.Random;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FixTest {
+public class PushTest {
     @Autowired
     private RedisQueue redisQueue;
 
@@ -51,7 +51,7 @@ public class FixTest {
         int src = calendar.get(Calendar.SECOND);
         JobMsg job = new JobWrapp();
         job.setBody(String.format("{你应该在 %s 运行}", hour + ":" + min + ":" + src));
-        job.setTopic("test1".concat(new Date().getSeconds() + ""));
+        job.setTopic("test");
         job.setDelay(time);
         job.setId(JobIdGenerator.getStringId());
         redisQueue.push(job);
