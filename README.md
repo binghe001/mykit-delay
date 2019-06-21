@@ -104,7 +104,7 @@ private int status= Status.WaitPut.ordinal();
 * 支持 cluster 会涉及到分布式锁竞争 效果不是很明显  分布式锁采用`redis`的 `setNx`实现
 * StandAlone 
 
-推荐使用master slave的模式
+目前，经过测试，推荐使用master slave的模式，后期会优化Cluster模式
 
 ##### Usage
 
