@@ -5,15 +5,15 @@ mykit:
     registry:
       enable: false
       namespace: io-mykit-delay
-      serverList: 10.2.2.231:2181
+      serverList: 127.0.0.1:2181
     rocketmq:
       namesrvAddr: 127.0.0.1:9876
       filterSourceRoot: /home/
     activemq:
       # 连接的ActiveMQ failover:(tcp://localhost:61616,tcp://localhost:61617)
-      brokerUrl: failover:(tcp://10.2.2.231:61616)
-      username:
-      password:
+      brokerUrl: failover:(tcp://127.0.0.1:61616)
+      username: admin
+      password: admin123
       useExponentialBackOff: true
       useAsyncSend: true
       maximumRedeliveries: 1
@@ -62,12 +62,12 @@ spring:
     database: 1
     cluster:
       nodes:
-        - 10.2.2.231:7001
-        - 10.2.2.231:7002
-        - 10.2.2.231:7003
-        - 10.2.2.231:7004
-        - 10.2.2.231:7005
-        - 10.2.2.231:7006
+        - 127.0.0.1:7001
+        - 127.0.0.1:7002
+        - 127.0.0.1:7003
+        - 127.0.0.1:7004
+        - 127.0.0.1:7005
+        - 127.0.0.1:7006
     pool:
       max-idle: 300
       min-idle: 10
