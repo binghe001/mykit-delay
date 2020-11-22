@@ -127,7 +127,7 @@ public class BucketTask extends TimerTask {
     }
 
     /**
-     * 批量偷取 提高实时性
+     * 批量获取 提高实时性
      */
     private List<String> peeks() {
         try {

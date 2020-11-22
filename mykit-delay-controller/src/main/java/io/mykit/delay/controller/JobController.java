@@ -143,7 +143,7 @@ public class JobController {
             for (int i = 1; i <= pageCount; i++) {
                 msgs.addAll(store.getNotFinshDataList((i - 1) * PAGE_SIZE, PAGE_SIZE));
             }
-            //1、首先情况数据
+            //1、首先清空数据
             this.reidsQueue.clear();
             long time  = System.currentTimeMillis();
             int  index = 1;

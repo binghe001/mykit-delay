@@ -38,8 +38,8 @@ import javax.sql.DataSource;
  */
 public class RdbStore {
     public static final  Logger LOGGER         = LoggerFactory.getLogger(RdbStore.class);
-    private static final String TABLE_NAME     = "t_delay_queue_job";
-    private static final String LOG_TABLE_NAME = "t_delay_queue_job_log";
+    private static final String TABLE_NAME     = "mykit_delay_queue_job";
+    private static final String LOG_TABLE_NAME = "mykit_delay_queue_job_log";
 
     private DataSource dataSource;
 

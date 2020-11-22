@@ -19,7 +19,7 @@ package io.mykit.delay.common.utils;
  * @author liuyazhuang
  * @version 1.0.0
  * @date 2019/5/29
- * @description
+ * @description 雪花算法生成分布式序列号
  */
 public class SnowFlake {
     /**
