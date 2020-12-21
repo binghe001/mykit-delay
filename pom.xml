@@ -16,6 +16,7 @@
         <module>mykit-delay-config</module>
         <module>mykit-delay-test</module>
         <module>mykit-delay-rpc</module>
+        <module>mykit-delay-healthy</module>
     </modules>
 
     <properties>

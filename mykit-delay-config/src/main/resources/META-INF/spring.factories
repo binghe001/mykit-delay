@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.mykit.delay.common.autoconfigigure.RedisQueueAutoConfiguration,io.mykit.delay.common.autoconfigigure.LeaderAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.mykit.delay.common.autoconfigigure.redis.RedisQueueAutoConfiguration,io.mykit.delay.common.autoconfigigure.ha.LeaderAutoConfiguration

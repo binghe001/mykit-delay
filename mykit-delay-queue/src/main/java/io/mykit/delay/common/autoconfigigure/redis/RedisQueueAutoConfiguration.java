@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.common.autoconfigigure;
+package io.mykit.delay.common.autoconfigigure.redis;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import io.mykit.delay.common.autoconfigigure.db.DruidConfig;
 import io.mykit.delay.queue.redis.*;
 import io.mykit.delay.queue.redis.bucket.BucketQueueManager;
 import io.mykit.delay.queue.redis.event.JobEventBus;
@@ -47,7 +48,7 @@ import redis.clients.jedis.Jedis;
 public class RedisQueueAutoConfiguration {
     public static final Logger               LOGGER = LoggerFactory.getLogger(RedisQueueAutoConfiguration.class);
     @Autowired
-    private             DruidConfig          druidConfig;
+    private DruidConfig druidConfig;
     @Autowired
     private             RedisQueueProperties properties;
     @Autowired

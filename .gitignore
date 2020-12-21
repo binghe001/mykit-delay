@@ -31,3 +31,6 @@ target/
 # system ignore
 .DS_Store
 Thumbs.db
+
+# logs ignore
+soft.logs*

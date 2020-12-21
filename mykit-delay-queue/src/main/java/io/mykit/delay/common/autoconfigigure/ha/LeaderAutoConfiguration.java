@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.common.autoconfigigure;
+package io.mykit.delay.common.autoconfigigure.ha;
 
+import io.mykit.delay.common.autoconfigigure.RegistryProperties;
 import io.mykit.delay.common.conf.AppEnvContext;
 import io.mykit.delay.common.utils.IpUtils;
 import io.mykit.delay.queue.leader.LeaderManager;

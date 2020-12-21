@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.common.autoconfigigure;
+package io.mykit.delay.common.autoconfigigure.db;
 
 import com.alibaba.druid.pool.DruidDataSource;
 

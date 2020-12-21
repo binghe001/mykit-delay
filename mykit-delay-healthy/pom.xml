@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mykit-delay-controller</artifactId>
+    <artifactId>mykit-delay-healthy</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>io.mykit.delay</groupId>
-            <artifactId>mykit-delay-healthy</artifactId>
+            <artifactId>mykit-delay-queue</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
