@@ -17,6 +17,8 @@
         <module>mykit-rpc-sofa</module>
         <module>mykit-rpc-springcloud</module>
         <module>mykit-rpc-springcloud-alibaba</module>
+        <module>mykit-rpc-grpc</module>
+        <module>mykit-rpc-brpc</module>
     </modules>
 
 
