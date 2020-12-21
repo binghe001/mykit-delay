@@ -15,7 +15,7 @@
  */
 package io.mykit.delay.queue.cqp;
 
-import io.mykit.delay.common.autoconfigigure.MessageProducer;
+import io.mykit.delay.common.autoconfigigure.message.MessageProducer;
 import io.mykit.delay.common.exception.ConsumeQueueException;
 import io.mykit.delay.queue.core.ConsumeQueueProvider;
 import io.mykit.delay.queue.core.Job;

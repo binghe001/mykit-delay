@@ -46,13 +46,13 @@ import redis.clients.jedis.Jedis;
 @EnableConfigurationProperties(RedisQueueProperties.class)
 @ConditionalOnClass(value = {Jedis.class, RedisQueue.class})
 public class RedisQueueAutoConfiguration {
-    public static final Logger               LOGGER = LoggerFactory.getLogger(RedisQueueAutoConfiguration.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(RedisQueueAutoConfiguration.class);
     @Autowired
     private DruidConfig druidConfig;
     @Autowired
-    private             RedisQueueProperties properties;
+    private RedisQueueProperties properties;
     @Autowired
-    private             StringRedisTemplate  template;
+    private StringRedisTemplate template;
 
     private JobOperationService jobOperationService;
 

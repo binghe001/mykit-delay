@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.common.autoconfigigure.activemq;
+package io.mykit.delay.common.autoconfigigure.message.activemq;
 
 import io.mykit.delay.queue.activemq.ActiveMQSender;
 import io.mykit.delay.queue.activemq.ActiveMQSenderFactory;

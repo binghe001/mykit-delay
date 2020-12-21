@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.mykit.delay.common.autoconfigigure.rocketmq;
+package io.mykit.delay.common.autoconfigigure.message.rocketmq;
 
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 
-import io.mykit.delay.common.autoconfigigure.MessageProducer;
+import io.mykit.delay.common.autoconfigigure.message.MessageProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
