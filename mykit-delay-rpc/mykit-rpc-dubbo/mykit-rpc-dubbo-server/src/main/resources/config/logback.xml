@@ -1,0 +1,49 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="logpath" value="${soft.logs}"/>
+    <conversionRule conversionWord="clr"
+                    converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--%caller{1}-->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!--
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40}  %L - %msg%n</pattern>
+            -->
+            <pattern>%clr(%d{HH:mm:ss.SSS}){faint} %clr([%thread]){faint} %clr(%-5level){magenta}%clr(%-40.40logger{40}){cyan} %L %clr(:){faint}- %msg%n
+            </pattern>
+        </layout>
+    </appender>
+    <!-- 所有日志文件-->
+    <appender name="mykit-delay-dubbo-Log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logpath}/mykit-delay-dubbo-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="mykit-delay-dubbo-LogTack" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logpath}/mykit-delay-dubbo-track-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 为莫个包下的所有类指定Appender 这里也可以指定类名称例如：com.aa.bb.ClassName-->
+    <logger name="io.mykit.delay" level="info">
+        <appender-ref ref="mykit-delay-dubbo-Log"/>
+    </logger>
+    <logger name="org.apache.zookeeper" level="warn"></logger>
+    <root name="io.mykit.delay.queue.redis.ready" level="debug">
+        <appender-ref ref="mykit-delay-dubbo-LogTack"/>
+    </root>
+    <root name="io.mykit.delay" level="info">
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>

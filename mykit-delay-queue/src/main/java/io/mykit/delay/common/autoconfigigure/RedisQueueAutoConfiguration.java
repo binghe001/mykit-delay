@@ -123,7 +123,7 @@ public class RedisQueueAutoConfiguration {
 
     @Bean
     @Autowired
-    public RedisQueue redisQueueImpl(JobOperationService jobOperationService, BucketQueueManager bucketQueueManager, ReadyQueueManager readyQueueManager) {
+    public RedisQueue redisQueue(JobOperationService jobOperationService, BucketQueueManager bucketQueueManager, ReadyQueueManager readyQueueManager) {
         RedisQueue redisQueue = new RedisQueueImpl();
         redisQueue.setProperties(properties);
         redisQueue.setJobOperationService(jobOperationService);

@@ -28,6 +28,7 @@ import io.mykit.delay.queue.redis.ready.ReadyQueueManager;
 import io.mykit.delay.queue.redis.support.RedisQueueProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 

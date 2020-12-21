@@ -15,6 +15,7 @@
         <module>mykit-delay-core</module>
         <module>mykit-delay-config</module>
         <module>mykit-delay-test</module>
+        <module>mykit-delay-rpc</module>
     </modules>
 
     <properties>
@@ -128,10 +129,6 @@
 
             </exclusions>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-        <!--<artifactId>jackson-databind</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
@@ -140,7 +137,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <optional>true</optional>
+            <!--<optional>true</optional>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

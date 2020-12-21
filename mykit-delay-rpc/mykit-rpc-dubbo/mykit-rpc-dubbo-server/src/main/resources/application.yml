@@ -1,0 +1,8 @@
+dubbo:
+  application:
+    name: mykit-rpc-dubbo
+  registry:
+    address: zookeeper://10.31.6.43:2181
+  protocol:
+    name: dubbo
+    port: 20880
